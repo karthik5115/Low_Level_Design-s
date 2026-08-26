@@ -1,0 +1,239 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1350 950" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .card-bg { fill: #1e293b; stroke: #334155; stroke-width: 1.5; rx: 8; }
+      .card-header { fill: #3b82f6; rx: 8; }
+      .card-header-alt { fill: #8b5cf6; rx: 8; }
+      .card-header-green { fill: #10b981; rx: 8; }
+      .card-header-amber { fill: #f59e0b; rx: 8; }
+      .card-header-pink { fill: #ec4899; rx: 8; }
+      .title-text { fill: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: bold; }
+      .sub-text { fill: #94a3b8; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-style: italic; }
+      .body-text { fill: #e2e8f0; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 11.5px; }
+      .line { stroke: #64748b; stroke-width: 1.5; fill: none; }
+      .line-inherit { stroke: #8b5cf6; stroke-width: 2; stroke-dasharray: 4,4; fill: none; }
+      .line-assoc { stroke: #38bdf8; stroke-width: 1.5; fill: none; }
+      .line-comp { stroke: #f43f5e; stroke-width: 1.5; fill: none; }
+      .arrow { fill: #64748b; }
+      .arrow-inherit { fill: #8b5cf6; }
+      .arrow-assoc { fill: #38bdf8; }
+      .label-box { fill: #0f172a; stroke: #475569; stroke-width: 1; rx: 4; }
+      .label-text { fill: #38bdf8; font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 10px; font-weight: 600; text-anchor: middle; }
+      .main-title { fill: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 24px; font-weight: 800; }
+      .main-subtitle { fill: #64748b; font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 13px; }
+    </style>
+    <marker id="arrow-assoc" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M1,1 L7,4 L1,7" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
+    </marker>
+    <marker id="arrow-inherit" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5" />
+    </marker>
+    <marker id="arrow-comp" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <polygon points="0 5, 5 0, 10 5, 5 10" fill="#f43f5e" />
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1350" height="950" class="bg"/>
+
+  <!-- Title Header -->
+  <text x="50" y="45" class="main-title">Elevator System — UML Class Architecture</text>
+  <text x="50" y="68" class="main-subtitle">Low-Level Design Class Diagram showing OOP Relationships, Strategies, and Controllers</text>
+
+  <!-- Legend -->
+  <g transform="translate(820, 25)">
+    <rect width="480" height="42" fill="#1e293b" rx="6" stroke="#334155"/>
+    <circle cx="20" cy="21" r="5" fill="#38bdf8"/>
+    <text x="32" y="25" fill="#cbd5e1" font-size="11" font-family="sans-serif">Association</text>
+    <line x1="105" y1="21" x2="125" y2="21" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="3,3"/>
+    <polygon points="125 18, 133 21, 125 24" fill="#1e293b" stroke="#8b5cf6"/>
+    <text x="140" y="25" fill="#cbd5e1" font-size="11" font-family="sans-serif">Inheritance</text>
+    <polygon points="215 21, 220 17, 225 21, 220 25" fill="#f43f5e"/>
+    <text x="232" y="25" fill="#cbd5e1" font-size="11" font-family="sans-serif">Composition</text>
+    <circle cx="315" cy="21" r="5" fill="#10b981"/>
+    <text x="327" y="25" fill="#cbd5e1" font-size="11" font-family="sans-serif">Enum / Strategy</text>
+  </g>
+
+  <!-- floors Card -->
+  <g transform="translate(50, 110)" filter="url(#shadow)">
+    <rect width="210" height="150" class="card-bg"/>
+    <path d="M 0 8 Q 0 0 8 0 L 202 0 Q 210 0 210 8 L 210 32 L 0 32 Z" class="card-header"/>
+    <text x="15" y="21" class="title-text">floors</text>
+    <text x="15" y="55" class="body-text">- buttons: ExternalButtons</text>
+    <text x="15" y="73" class="body-text">- floor: int</text>
+    <line x1="0" y1="85" x2="210" y2="85" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="105" class="body-text">+ pressUp(): void</text>
+    <text x="15" y="125" class="body-text">+ pressDown(): void</text>
+  </g>
+
+  <!-- ExternalButtons Card -->
+  <g transform="translate(320, 110)" filter="url(#shadow)">
+    <rect width="240" height="150" class="card-bg"/>
+    <path d="M 0 8 Q 0 0 8 0 L 232 0 Q 240 0 240 8 L 240 32 L 0 32 Z" class="card-header"/>
+    <text x="15" y="21" class="title-text">ExternalButtons</text>
+    <text x="15" y="55" class="body-text">~ exbDispatcher: Dispatcher</text>
+    <line x1="0" y1="75" x2="240" y2="75" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="100" class="body-text">+ pressUP(floor: int): void</text>
+    <text x="15" y="125" class="body-text">+ pressDown(floor: int): void</text>
+  </g>
+
+  <!-- ExternalButtonDispatcher Card (Abstract Base) -->
+  <g transform="translate(620, 100)" filter="url(#shadow)">
+    <rect width="290" height="165" class="card-bg"/>
+    <path d="M 0 8 Q 0 0 8 0 L 282 0 Q 290 0 290 8 L 290 32 L 0 32 Z" class="card-header-alt"/>
+    <text x="15" y="21" class="title-text">ExternalButtonDispatcher</text>
+    <text x="15" y="55" class="body-text">~ ecControllersList: List&lt;Controller&gt;</text>
+    <line x1="0" y1="75" x2="290" y2="75" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="100" class="body-text">+ assignRequestToElevator(</text>
+    <text x="30" y="120" class="body-text">floor: int, dir: Direction): void</text>
+  </g>
+
+  <!-- ExternalButtonDispatcherEven (Strategy Subclass) -->
+  <g transform="translate(480, 320)" filter="url(#shadow)">
+    <rect width="260" height="120" class="card-bg"/>
+    <path d="M 0 8 Q 0 0 8 0 L 252 0 Q 260 0 260 8 L 260 32 L 0 32 Z" class="card-header-alt"/>
+    <text x="15" y="21" class="title-text">ExternalButtonDispatcherEven</text>
+    <text x="15" y="55" class="sub-text">Strategy: Odd/Even Floor Routing</text>
+    <line x1="0" y1="65" x2="260" y2="65" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="88" class="body-text">+ assignRequestToElevator(</text>
+    <text x="30" y="106" class="body-text">floor: int, dir: Direction): void</text>
+  </g>
+
+  <!-- ExternalButtonDispatcherTopbottom (Strategy Subclass) -->
+  <g transform="translate(770, 320)" filter="url(#shadow)">
+    <rect width="280" height="150" class="card-bg"/>
+    <path d="M 0 8 Q 0 0 8 0 L 272 0 Q 280 0 280 8 L 280 32 L 0 32 Z" class="card-header-alt"/>
+    <text x="15" y="21" class="title-text">ExternalButtonDispatcherTopbottom</text>
+    <text x="15" y="52" class="body-text">~ mid: int = 5</text>
+    <text x="15" y="70" class="body-text">~ liftIdTop: int[], liftIdBot: int[]</text>
+    <line x1="0" y1="80" x2="280" y2="80" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="100" class="body-text">+ assignRequestToElevator(...)</text>
+    <text x="15" y="120" class="body-text">- isEligibleLift(ids, id): boolean</text>
+  </g>
+
+  <!-- ElevatorCarController Card -->
+  <g transform="translate(970, 100)" filter="url(#shadow)">
+    <rect width="330" height="340" class="card-bg"/>
+    <path d="M 0 8 Q 0 0 8 0 L 322 0 Q 330 0 330 8 L 330 32 L 0 32 Z" class="card-header-green"/>
+    <text x="15" y="21" class="title-text">ElevatorCarController</text>
+    <text x="15" y="55" class="body-text">~ elevatorCar: ElevatorCar</text>
+    <text x="15" y="75" class="body-text">~ upQueue: PriorityQueue&lt;int&gt; (Min)</text>
+    <text x="15" y="95" class="body-text">~ downQueue: PriorityQueue&lt;int&gt; (Max)</text>
+    <text x="15" y="115" class="body-text">~ pendingQueueUP: Queue&lt;int&gt;</text>
+    <text x="15" y="135" class="body-text">~ pendingQueueDown: Queue&lt;int&gt;</text>
+    <line x1="0" y1="150" x2="330" y2="150" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="175" class="body-text">+ acceptNewRequest(</text>
+    <text x="30" y="195" class="body-text">floor: int, dir: Direction): void</text>
+    <text x="15" y="220" class="body-text">+ processInternalRequest(floor): void</text>
+    <text x="15" y="245" class="body-text" font-weight="bold" fill="#34d399">+ move(): void  [LOOK Algorithm]</text>
+  </g>
+
+  <!-- ElevatorCar Card -->
+  <g transform="translate(970, 520)" filter="url(#shadow)">
+    <rect width="330" height="380" class="card-bg"/>
+    <path d="M 0 8 Q 0 0 8 0 L 322 0 Q 330 0 330 8 L 330 32 L 0 32 Z" class="card-header-pink"/>
+    <text x="15" y="21" class="title-text">ElevatorCar</text>
+    <text x="15" y="55" class="body-text">- carId: int</text>
+    <text x="15" y="75" class="body-text">- currentFloor: int</text>
+    <text x="15" y="95" class="body-text">- direction: Direction</text>
+    <text x="15" y="115" class="body-text">- display: Display</text>
+    <text x="15" y="135" class="body-text">- doors: Doors</text>
+    <text x="15" y="155" class="body-text">- internalbuttons: InternalButtons</text>
+    <line x1="0" y1="170" x2="330" y2="170" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="195" class="body-text">+ getCarId() / setCarId()</text>
+    <text x="15" y="215" class="body-text">+ getCurrentFloor() / setCurrentFloor()</text>
+    <text x="15" y="235" class="body-text">+ getDirection() / setDirection()</text>
+    <text x="15" y="255" class="body-text">+ getDisplay() / setDisplay()</text>
+    <text x="15" y="275" class="body-text">+ getDoors() / setDoors()</text>
+    <text x="15" y="295" class="body-text">+ getInternalbuttons() / set()</text>
+  </g>
+
+  <!-- InternalButtons Card -->
+  <g transform="translate(580, 560)" filter="url(#shadow)">
+    <rect width="240" height="150" class="card-bg"/>
+    <path d="M 0 8 Q 0 0 8 0 L 232 0 Q 240 0 240 8 L 240 32 L 0 32 Z" class="card-header"/>
+    <text x="15" y="21" class="title-text">InternalButtons</text>
+    <text x="15" y="55" class="body-text">~ ibDispatcher: Dispatcher</text>
+    <text x="15" y="75" class="body-text">~ floor: int</text>
+    <line x1="0" y1="90" x2="240" y2="90" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="115" class="body-text">+ pressButton(floor: int): void</text>
+  </g>
+
+  <!-- InternalButtonDispatcher Card -->
+  <g transform="translate(580, 750)" filter="url(#shadow)">
+    <rect width="250" height="130" class="card-bg"/>
+    <path d="M 0 8 Q 0 0 8 0 L 242 0 Q 250 0 250 8 L 250 32 L 0 32 Z" class="card-header-alt"/>
+    <text x="15" y="21" class="title-text">InternalButtonDispatcher</text>
+    <text x="15" y="55" class="body-text">~ ecCarController: Controller</text>
+    <line x1="0" y1="75" x2="250" y2="75" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="105" class="body-text">+ submitRequest(floor: int): void</text>
+  </g>
+
+  <!-- Display Card -->
+  <g transform="translate(290, 750)" filter="url(#shadow)">
+    <rect width="220" height="130" class="card-bg"/>
+    <path d="M 0 8 Q 0 0 8 0 L 212 0 Q 220 0 220 8 L 220 32 L 0 32 Z" class="card-header-amber"/>
+    <text x="15" y="21" class="title-text">Display</text>
+    <text x="15" y="60" class="body-text">+ showFloor(floor: int): void</text>
+    <text x="15" y="85" class="body-text">+ showDirection(dir): void</text>
+  </g>
+
+  <!-- Doors Card -->
+  <g transform="translate(50, 750)" filter="url(#shadow)">
+    <rect width="200" height="130" class="card-bg"/>
+    <path d="M 0 8 Q 0 0 8 0 L 192 0 Q 200 0 200 8 L 200 32 L 0 32 Z" class="card-header-amber"/>
+    <text x="15" y="21" class="title-text">Doors</text>
+    <text x="15" y="55" class="body-text">- isOpen: boolean</text>
+    <line x1="0" y1="70" x2="200" y2="70" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="95" class="body-text">+ openDoors(): void</text>
+    <text x="15" y="115" class="body-text">+ closeDoors(): void</text>
+  </g>
+
+  <!-- Direction Enum Card -->
+  <g transform="translate(50, 560)" filter="url(#shadow)">
+    <rect width="180" height="130" class="card-bg"/>
+    <path d="M 0 8 Q 0 0 8 0 L 172 0 Q 180 0 180 8 L 180 32 L 0 32 Z" class="card-header-green"/>
+    <text x="15" y="21" class="title-text">&lt;&lt;enum&gt;&gt; Direction</text>
+    <text x="15" y="60" class="body-text" fill="#38bdf8">• UP</text>
+    <text x="15" y="80" class="body-text" fill="#38bdf8">• DOWN</text>
+    <text x="15" y="100" class="body-text" fill="#38bdf8">• IDLE</text>
+  </g>
+
+  <!-- Relationship Connectors -->
+  <!-- floors -> ExternalButtons -->
+  <path d="M 260 185 L 320 185" class="line-assoc" marker-end="url(#arrow-assoc)"/>
+
+  <!-- ExternalButtons -> ExternalButtonDispatcher -->
+  <path d="M 560 185 L 620 185" class="line-assoc" marker-end="url(#arrow-assoc)"/>
+
+  <!-- ExternalButtonDispatcher -> ExternalButtonDispatcherEven (Inheritance) -->
+  <path d="M 690 265 L 690 290 L 610 290 L 610 320" class="line-inherit" marker-start="url(#arrow-inherit)"/>
+
+  <!-- ExternalButtonDispatcher -> ExternalButtonDispatcherTopbottom (Inheritance) -->
+  <path d="M 830 265 L 830 290 L 910 290 L 910 320" class="line-inherit" marker-start="url(#arrow-inherit)"/>
+
+  <!-- ExternalButtonDispatcher -> ElevatorCarController -->
+  <path d="M 910 185 L 970 185" class="line-assoc" marker-end="url(#arrow-assoc)"/>
+
+  <!-- ElevatorCarController -> ElevatorCar -->
+  <path d="M 1135 440 L 1135 520" class="line-comp" marker-start="url(#arrow-comp)"/>
+
+  <!-- InternalButtons -> InternalButtonDispatcher -->
+  <path d="M 700 710 L 700 750" class="line-assoc" marker-end="url(#arrow-assoc)"/>
+
+  <!-- InternalButtonDispatcher -> ElevatorCarController -->
+  <path d="M 830 815 L 900 815 L 900 370 L 970 370" class="line-assoc" marker-end="url(#arrow-assoc)"/>
+
+  <!-- ElevatorCar -> InternalButtons -->
+  <path d="M 970 635 L 820 635" class="line-comp" marker-start="url(#arrow-comp)"/>
+
+  <!-- ElevatorCar -> Display -->
+  <path d="M 970 790 L 510 790" class="line-comp" marker-start="url(#arrow-comp)"/>
+
+  <!-- ElevatorCar -> Doors -->
+  <path d="M 970 850 L 250 850" class="line-comp" marker-start="url(#arrow-comp)"/>
+
+</svg>
